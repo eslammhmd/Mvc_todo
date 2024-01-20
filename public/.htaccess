@@ -1,0 +1,8 @@
+# remove index.php from the request but maintain the query string 
+#mode responsible for collect anything in URL and send it to public index ####3
+#this useful for collect request and send it to index.php  step number 3
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule ^ index.php [QSA,L]
